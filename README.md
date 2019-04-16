@@ -302,7 +302,7 @@ Thanks to Fotokite for the initial development of the project code and simulator
 
 ## Implemented Controller ##
 
-All implementtions were done using approches explianed in class and from the python reference implmentations.  The code demonstating how each outpuf was calculated is in the corresponding code snippets below.
+All implementtions were done using approches explianed in class and from the python reference implmentations.  The code demonstating how each output was calculated is in the corresponding code snippets below.
 
 ### Implemented body rate control in C++ ###
 ```
