@@ -298,13 +298,13 @@ The specific performance metrics are as follows:
 
 Thanks to Fotokite for the initial development of the project code and simulator.
 
-#Results#
+# Results #
 
 ## Implemented Controller ##
 
-All implementtions were done using approches explianed in class and from the python reference implmentations.
+All implementtions were done using approches explianed in class and from the python reference implmentations.  The code demonstating how each outpuf was calculated is in the corresponding code snippets below.
 
-###Implemented body rate control in C++###
+### Implemented body rate control in C++ ###
 ```
 V3F QuadControl::BodyRateControl(V3F pqrCmd, V3F pqr)
 {
@@ -336,7 +336,7 @@ V3F QuadControl::BodyRateControl(V3F pqrCmd, V3F pqr)
   return momentCmd;
 }
 ```
-###Implement roll pitch control in C++###
+### Implement roll pitch control in C++ ###
 ```
 // returns a desired roll and pitch rate 
 V3F QuadControl::RollPitchControl(V3F accelCmd, Quaternion<float> attitude, float collThrustCmd)
@@ -381,7 +381,7 @@ V3F QuadControl::RollPitchControl(V3F accelCmd, Quaternion<float> attitude, floa
   return pqrCmd;
 }
 ```
-###Implement altitude controller in C++###
+### Implement altitude controller in C++ ###
 ```
 float QuadControl::AltitudeControl(float posZCmd, float velZCmd, float posZ, float velZ, Quaternion<float> attitude, float accelZCmd, float dt)
 {
@@ -425,7 +425,7 @@ float QuadControl::AltitudeControl(float posZCmd, float velZCmd, float posZ, flo
 }
 ```
 
-###Implement lateral position control in C++###
+### Implement lateral position control in C++ ###
 ```
 // returns a desired acceleration in global frame
 V3F QuadControl::LateralPositionControl(V3F posCmd, V3F velCmd, V3F pos, V3F vel, V3F accelCmdFF)
@@ -492,7 +492,7 @@ V3F QuadControl::LateralPositionControl(V3F posCmd, V3F velCmd, V3F pos, V3F vel
 }
 ```
 
-###Implement yaw control in C++###
+### Implement yaw control in C++ ###
 ```
 // returns desired yaw rate
 float QuadControl::YawControl(float yawCmd, float yaw)
@@ -526,8 +526,9 @@ float QuadControl::YawControl(float yawCmd, float yaw)
 }
 ```
 
-###Implement calculating the motor commands given commanded thrust and moments in C++ ###
+### Implement calculating the motor commands given commanded thrust and moments in C++ ###
 
+```
 VehicleCommand QuadControl::GenerateMotorCommands(float collThrustCmd, V3F momentCmd)
 {
   // Convert a desired 3-axis moment and collective thrust command to 
@@ -567,6 +568,7 @@ VehicleCommand QuadControl::GenerateMotorCommands(float collThrustCmd, V3F momen
 
   return cmd;
 }
+```
 
 ## Flight Evaluation ##
 
